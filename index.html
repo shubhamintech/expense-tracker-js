@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>💰 Expense Tracker</h1>
+    </header>
+
+    <main>
+      <!-- Add Transaction Form -->
+      <section class="card">
+        <h2>Add Transaction</h2>
+        <form id="expense-form" class="form-grid">
+          <input type="text" id="title" placeholder="Title (e.g. Food)" required>
+          <input type="number" id="amount" placeholder="Amount" required>
+          <select id="type">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </section>
+
+      <!-- Summary -->
+      <section class="card summary">
+        <h2>Summary</h2>
+        <div class="summary-grid">
+          <div class="summary-box income">
+            <p>Total Income</p>
+            <h3 id="income">₹0</h3>
+          </div>
+          <div class="summary-box expense">
+            <p>Total Expense</p>
+            <h3 id="expense">₹0</h3>
+          </div>
+          <div class="summary-box balance">
+            <p>Balance</p>
+            <h3 id="balance">₹0</h3>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- Transactions -->
+      <section class="card">
+        <h2>Transactions</h2>
+        <ul id="transaction-list" class="transaction-list"></ul>
+      </section>
+
+      <!-- Chart -->
+      <section class="card">
+        <h2>Overview</h2>
+        <canvas id="expenseChart"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
